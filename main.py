@@ -6,7 +6,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 import requests
-
+import os
 
 #My Modules
 from test import MoviesApiDb
@@ -14,14 +14,14 @@ from pprint import pprint
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environe.get("AP_KEY")
 Bootstrap(app)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///movies.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environe.get("BS_KEY")
 db = SQLAlchemy(app)
 
 
 #Movie Database
-MB_API_KEY = "9149b2f73b90782e603b46258102edd0"
+MB_API_KEY = os.environe.get("API_K")
 movie_db_api = MoviesApiDb()
 
 
