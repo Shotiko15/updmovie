@@ -14,14 +14,14 @@ from pprint import pprint
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environe.get("AP_KEY")
+app.config['SECRET_KEY'] = os.environe.get("SECRET_KEY")
 Bootstrap(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environe.get("DATABASE_URL")
 db = SQLAlchemy(app)
 
 
 #Movie Database
-MB_API_KEY = os.environe.get("API_K")
+MB_API_KEY = "9149b2f73b90782e603b46258102edd0"
 movie_db_api = MoviesApiDb()
 
 
